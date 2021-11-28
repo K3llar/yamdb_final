@@ -2,9 +2,9 @@ from django.shortcuts import get_object_or_404
 
 from rest_framework import exceptions, serializers
 
-from .models import Comment, Review
-
 from artworks.models import Title
+
+from .models import Comment, Review
 
 
 class ReviewSerializer(serializers.ModelSerializer):

@@ -3,11 +3,11 @@ from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
 from rest_framework.pagination import PageNumberPagination
 
+from artworks.models import Title
+
 from .models import Review
 from .permissions import OwnerOrReadOnly
 from .serializers import CommentSerializer, ReviewSerializer
-
-from artworks.models import Title
 
 
 class ReviewViewSet(viewsets.ModelViewSet):
