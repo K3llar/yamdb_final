@@ -149,4 +149,4 @@ EXAMPLE ANSWER
 
 Более подробная информация представлена на [GET]: http://127.0.0.1:8000/redoc/
 
-![workflow](https://github.com/K3llar/yamdb_final/actions/workflows/yamdb_workflow/badge.svg)
+![workflow](https://github.com/K3llar/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
