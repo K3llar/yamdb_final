@@ -38,7 +38,7 @@ api_yamdb
 
 ## Работа с приложением:
 
-Получение списка всех категорий: [GET]: http://127.0.0.1:8000/api/v1/categories/
+Получение списка всех категорий: [GET]: https://k3llar.tk/api/v1/categories/
 
 ```
 EXAMPLE ANSWER
@@ -59,7 +59,7 @@ EXAMPLE ANSWER
 ```
 
 
-Получение списка всех жанров: [GET]: http://127.0.0.1:8000/api/v1/genres/
+Получение списка всех жанров: [GET]: https://k3llar.tk/api/v1/genres/
 
 ```
 EXAMPLE ANSWER
@@ -79,7 +79,7 @@ EXAMPLE ANSWER
 ]
 ```
 
-Получение списка всех произведения: [GET]: http://127.0.0.1:8000/api/v1/titles
+Получение списка всех произведения: [GET]: https://k3llar.tk/api/v1/titles
 
 ```
 EXAMPLE ANSWER
@@ -113,7 +113,7 @@ EXAMPLE ANSWER
 ```
 
 
-Получение информации о произведении: [GET]: http://127.0.0.1:8000/api/v1/titles/{titles_id:int}/
+Получение информации о произведении: [GET]: https://k3llar.tk/api/v1/titles/{titles_id:int}/
 
 ```
 EXAMPLE ANSWER
@@ -140,13 +140,13 @@ EXAMPLE ANSWER
 
 ### Таким же образом можно получить списки и конкретных экземпляров классов:
 
-Отзывы [GET]: http://127.0.0.1:8000/api/v1/titles/{titles_id:int}/reviews/{review_id:int}/
+Отзывы [GET]: https://k3llar.tk/api/v1/titles/{titles_id:int}/reviews/{review_id:int}/
 
-Комментарии [GET]: http://127.0.0.1:8000/api/v1/titles/{titles_id:int}/reviews/{review_id:int}/comments/{comment_id:int}/
+Комментарии [GET]: https://k3llar.tk/api/v1/titles/{titles_id:int}/reviews/{review_id:int}/comments/{comment_id:int}/
 
-Пользователи [GET]: http://127.0.0.1:8000/api/v1/users/{user_id:int}/
+Пользователи [GET]: https://k3llar.tk/api/v1/users/{user_id:int}/
 
 
-Более подробная информация представлена на [GET]: http://127.0.0.1:8000/redoc/
+Более подробная информация представлена на [GET]: https://k3llar.tk/redoc/
 
 ![workflow](https://github.com/K3llar/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)

@@ -1,6 +1,10 @@
 name: YaMDB_project
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
+      - main
 
 jobs:
   tests:
