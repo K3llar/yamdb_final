@@ -12,51 +12,45 @@
 ## Инструкция для запуска приложения
 Для запуска необходимо добавить SECRETS в github.workflows
 
-DOCKER_USERNAME - имя пользователя в hub.docker
+- ```DOCKER_USERNAME``` - имя пользователя в hub.docker
+- ```DOCKER_PASSWORD``` - пароль
+- ```HOST``` - адрес сервера
+- ```USER``` - пользователь
+- ```SSH_KEY``` - приватный ssh ключ
+- ```PASSPHRASE``` - кодовая фраза
+- ```DB_ENGINE``` - django.db.backends.postgresql
+- ```DB_NAME``` - postgres (по умолчанию)
+- ```POSTGRES_USER``` - postgres (по умолчанию)
+- ```POSTGRES_PASSWORD``` - postgres (по умолчанию)
+- ```DB_HOST``` - db
+- ```DB_PORT``` - 5432
+- ```SECRET_KEY``` - секретный ключ приложения django (необходимо чтобы были экранированы или отсутствовали скобки)
+- ```ALLOWED_HOSTS``` - список разрешенных адресов
+- ```TELEGRAM_TO``` - id пользователя
+- ```TELEGRAM_TOKEN``` - токен бота
 
-DOCKER_PASSWORD - пароль
+### Для запуска проекта необходимо выполнить следующие шаги
 
+```
+git clone https://github.com/K3llar/yamdb_final.git
+cd yamdb_final
+```
 
-HOST - адрес сервера
-
-USER - пользователь
-
-
-SSH_KEY - приватный ssh ключ
-
-PASSPHRASE - кодовая фраза
-
-DB_ENGINE - django.db.backends.postgresql
-
-DB_NAME - postgres (по умолчанию)
-
-POSTGRES_USER - postgres (по умолчанию)
-
-POSTGRES_PASSWORD - postgres (по умолчанию)
-
-DB_HOST - db
-
-DB_PORT - 5432
-
-
-SECRET_KEY - секретный ключ приложения django (необходимо чтобы были экранированы или отсутствовали скобки)
-
-ALLOWED_HOSTS - список разрешенных адресов
-
-
-TELEGRAM_TO - id пользователя
-
-TELEGRAM_TOKEN - токен бота
-
-### При первом запуске необходимо выполнить следующие команды
+#### При первом запуске необходимо выполнить следующие команды:
+Для проведения необходимых миграций в базе данных 
+```
 docker-compose exec backend python manage.py makemigrations
+docker-compose exec backend python manage.py migrate
+```
+Для подключения статических файлов
+```
+docker-compose exec backend python manage.py collectstatic --no-input
+```
 
-docker-compose exec backend python manage.py migrate - для проведения необходимых изменений в базе данных
-
-docker-compose exec backend python manage.py collectstatic --no-input - для подключения статики
-
-docker-compose exec backend python manage.py createsuperuser - для создания супер юзера
-
+Для создания суперпользователя
+```
+docker-compose exec backend python manage.py createsuperuser
+```
 
 ## Пользовательские роли и разрешения:
 
@@ -83,7 +77,7 @@ docker-compose exec backend python manage.py createsuperuser - для созда
 
 ## Работа с приложением:
 
-Получение списка всех категорий: [GET]: https://k3llar.tk/api/v1/categories/
+Получение списка всех категорий: [GET]: /api/v1/categories/
 
 ```
 EXAMPLE ANSWER
@@ -104,7 +98,7 @@ EXAMPLE ANSWER
 ```
 
 
-Получение списка всех жанров: [GET]: https://k3llar.tk/api/v1/genres/
+Получение списка всех жанров: [GET]: /api/v1/genres/
 
 ```
 EXAMPLE ANSWER
@@ -124,7 +118,7 @@ EXAMPLE ANSWER
 ]
 ```
 
-Получение списка всех произведения: [GET]: https://k3llar.tk/api/v1/titles
+Получение списка всех произведения: [GET]: /api/v1/titles
 
 ```
 EXAMPLE ANSWER
@@ -158,7 +152,7 @@ EXAMPLE ANSWER
 ```
 
 
-Получение информации о произведении: [GET]: https://k3llar.tk/api/v1/titles/{titles_id:int}/
+Получение информации о произведении: [GET]: api/v1/titles/{titles_id:int}/
 
 ```
 EXAMPLE ANSWER
@@ -185,13 +179,13 @@ EXAMPLE ANSWER
 
 ### Таким же образом можно получить списки и конкретных экземпляров классов:
 
-Отзывы [GET]: https://k3llar.tk/api/v1/titles/{titles_id:int}/reviews/{review_id:int}/
+Отзывы [GET]: /api/v1/titles/{titles_id:int}/reviews/{review_id:int}/
 
-Комментарии [GET]: https://k3llar.tk/api/v1/titles/{titles_id:int}/reviews/{review_id:int}/comments/{comment_id:int}/
+Комментарии [GET]: /api/v1/titles/{titles_id:int}/reviews/{review_id:int}/comments/{comment_id:int}/
 
-Пользователи [GET]: https://k3llar.tk/api/v1/users/{user_id:int}/
+Пользователи [GET]: /api/v1/users/{user_id:int}/
 
 
-Более подробная информация представлена на [GET]: https://k3llar.tk/redoc/
+Более подробная информация представлена на [GET]: /redoc/
 
 ![workflow](https://github.com/K3llar/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
